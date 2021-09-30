@@ -24,7 +24,7 @@ body {
 
     span {
         color: $bgc;
-        padding: 0 1rem;
+        padding:0.5rem 1rem;
         font-size: 1.5rem;
     }
 
@@ -134,5 +134,45 @@ body {
                 border-bottom-right-radius: 15px;
             }
         }
+    }
+}
+
+#tech{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+    .fab{
+        padding: 1rem;
+        font-size: 5rem;
+        transition: 0.3s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .fa-html5{
+        color: orange;
+    }
+
+    .fa-css3-alt{
+        color: rgb(255, 218, 51);
+    }
+
+    .fa-js-square{
+        color: rgb(255, 174, 0);
+    }
+
+    .fa-sass{
+        color: rgb(196, 0, 196);
+    }
+
+    .fa-react {
+        color: rgb(51, 51, 255)
     }
 }
