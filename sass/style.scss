@@ -2,7 +2,7 @@ $bgc: white;
 $textc: black;
 
 
-*{
+* {
     font-family: Lora, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,72 +10,124 @@ $textc: black;
     text-decoration: none;
 }
 
-body{
+body {
     background-color: $bgc;
     color: $textc;
 }
 
-.navbar{
+.navbar {
     background-color: $textc;
     color: $bgc;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    span{
+    span {
         color: $bgc;
         padding: 0 1rem;
         font-size: 1.5rem;
     }
 
-        a{
-            text-decoration: none;
-            color: $bgc;
-            padding: 0 1rem;
-    
-            &:hover{
-                border-radius: 10px;
-                background-color: rgba(138, 138, 138, 0.5);
-            }
+    a {
+        text-decoration: none;
+        color: $bgc;
+        padding: 0 1rem;
+
+        &:hover {
+            border-radius: 10px;
+            background-color: rgba(138, 138, 138, 0.5);
         }
+    }
 
 }
 
-#hero{
+#hero {
     height: 100vh;
     min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-image: url(../images/undraw_working_late_pukg.svg);
+    background-image: url(../images/bg.jpg);
     // background-repeat: no-repeat;
     // background-position: 90%;
     // background-size: 50rem;
 
-    h1{
+    h1 {
         font-size: 4rem;
         margin-left: 1.5rem;
     }
-    p{
+
+    p {
         font-size: 1.2rem;
         margin: 1.5rem;
     }
-    img{
+
+    img {
         max-width: 50rem;
     }
 }
 
-#project{
+@keyframes card-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-80%);
+    }
+
+    to {
+        opacity: 1;
+        position: absolute;
+        transform: translateY(-103%);
+        background-color: black;
+        color: white;
+    }
+}
+
+#project {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
-    justify-content: center;
-    align-content: center;
-    .card{
-        text-align: center;
-        min-width: 30rem;
-        margin: 1rem;
-        background-color: $textc;
-        color: $bgc;
+    gap: 10px;
+    align-items: center;
+    background-color: blue;
+
+    .wrapper {
+        width: 700px;
+        height: 350px;
+        // border: 1px solid black;
+        margin: 1.5rem;
+        // transform: 3s ease-out;
+        overflow: hidden;
+
+        &:hover {
+            .info {
+                height: auto;
+                animation: card-animation 1s ease-in-out forwards;
+            }
+
+            transform: translateY(-15px);
+        }
+
+        .card {
+            // border: 2px solid red;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                //position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 15px;
+            }
+
+            .info{
+                width: 100%;
+                padding: 1rem;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+        }
     }
 }
