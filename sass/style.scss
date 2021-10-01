@@ -13,14 +13,19 @@ $textc: black;
 body {
     background-color: $bgc;
     color: $textc;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .navbar {
+    position: fixed;
+    width: 100%;
     background-color: $textc;
     color: $bgc;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 
     span {
         color: $bgc;
@@ -31,11 +36,24 @@ body {
     a {
         text-decoration: none;
         color: $bgc;
-        padding: 0 1rem;
+        padding: 0.5rem 0.2rem;
+        margin: 0.5rem;
 
         &:hover {
-            border-radius: 10px;
-            background-color: rgba(138, 138, 138, 0.5);
+            border-bottom: 2px solid $bgc;
+            //background-color: rgba(138, 138, 138, 0.5);
+        }
+    }
+
+    .social {
+        a {
+            margin: 0;
+            padding: 0.5rem;
+            // border-radius: 50%;
+            // border: 2px solid $bgc;
+            &:hover {
+                // background-color: rgba(255, 255, 255, 0.7);
+            }
         }
     }
 
@@ -55,6 +73,7 @@ body {
     h1 {
         font-size: 4rem;
         margin-left: 1.5rem;
+        z-index: 20;
     }
 
     p {
@@ -62,8 +81,12 @@ body {
         margin: 1.5rem;
     }
 
+    .image{
+        z-index: 0;
+    }
     img {
         max-width: 50rem;
+        z-index: 0;
     }
 }
 
@@ -88,6 +111,15 @@ body {
     gap: 10px;
     align-items: center;
     // background-color: blue;
+
+    h1 {
+        margin: 2rem;
+        font-size: 4rem;
+        font-weight: bold;
+        align-self: center;
+        justify-self: center;
+        grid-column: span 2;
+    }
 
     .wrapper {
         width: 700px;
@@ -128,6 +160,11 @@ body {
             }
 
             .info {
+                h1 {
+                    margin: 0;
+                    font-size: 3rem;
+                    font-weight: lighter;
+                }
                 width: 100%;
                 padding: 1rem;
                 border-bottom-left-radius: 15px;
@@ -144,7 +181,7 @@ body {
     justify-content: center;
     align-items: center;
     h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         margin-bottom: 2rem;
     }
     .fab{
@@ -157,7 +194,7 @@ body {
     }
 
     .fa-html5{
-        color: orange;
+        color: rgb(245, 75, 75);
     }
 
     .fa-css3-alt{
@@ -174,5 +211,22 @@ body {
 
     .fa-react {
         color: rgb(51, 51, 255)
+    }
+}
+
+#about {
+    background-color: $textc;
+    color: $bgc;
+    h1{
+        margin: 2rem;
+    }
+    p, a{
+        margin: 0 3rem;
+    }
+
+    .End{
+        font-size: 1rem;
+        text-align: center;
+        padding-bottom: 1.1rem;
     }
 }

@@ -10,9 +10,13 @@
 body {
   background-color: white;
   color: black;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .navbar {
+  position: fixed;
+  width: 100%;
   background-color: black;
   color: white;
   display: -webkit-box;
@@ -24,6 +28,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 100;
 }
 
 .navbar span {
@@ -35,12 +40,17 @@ body {
 .navbar a {
   text-decoration: none;
   color: white;
-  padding: 0 1rem;
+  padding: 0.5rem 0.2rem;
+  margin: 0.5rem;
 }
 
 .navbar a:hover {
-  border-radius: 10px;
-  background-color: rgba(138, 138, 138, 0.5);
+  border-bottom: 2px solid white;
+}
+
+.navbar .social a {
+  margin: 0;
+  padding: 0.5rem;
 }
 
 #hero {
@@ -61,6 +71,7 @@ body {
 #hero h1 {
   font-size: 4rem;
   margin-left: 1.5rem;
+  z-index: 20;
 }
 
 #hero p {
@@ -68,8 +79,13 @@ body {
   margin: 1.5rem;
 }
 
+#hero .image {
+  z-index: 0;
+}
+
 #hero img {
   max-width: 50rem;
+  z-index: 0;
 }
 
 @-webkit-keyframes card-animation {
@@ -113,6 +129,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#project h1 {
+  margin: 2rem;
+  font-size: 4rem;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  grid-column: span 2;
 }
 
 #project .wrapper {
@@ -162,6 +190,12 @@ body {
   border-bottom-right-radius: 15px;
 }
 
+#project .wrapper .card .info h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
 #tech {
   margin: 2rem;
   display: -webkit-box;
@@ -180,7 +214,7 @@ body {
 }
 
 #tech h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   margin-bottom: 2rem;
 }
 
@@ -197,7 +231,7 @@ body {
 }
 
 #tech .fa-html5 {
-  color: orange;
+  color: #f54b4b;
 }
 
 #tech .fa-css3-alt {
@@ -214,5 +248,24 @@ body {
 
 #tech .fa-react {
   color: #3333ff;
+}
+
+#about {
+  background-color: black;
+  color: white;
+}
+
+#about h1 {
+  margin: 2rem;
+}
+
+#about p, #about a {
+  margin: 0 3rem;
+}
+
+#about .End {
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 1.1rem;
 }
 /*# sourceMappingURL=style.css.map */
