@@ -47,8 +47,12 @@ body {
   border-bottom: 2px solid white;
 }
 
+.navbar .social {
+  margin-right: 5%;
+}
+
 .navbar .social a {
-  margin: 0;
+  font-size: 1.2rem;
   padding: 0.5rem;
 }
 
@@ -316,7 +320,8 @@ body {
   margin: 2rem;
 }
 
-#about p, #about a {
+#about p,
+#about a {
   margin: 0 3rem;
 }
 
@@ -579,7 +584,8 @@ body {
   #about h1 {
     margin: 2rem;
   }
-  #about p, #about a {
+  #about p,
+  #about a {
     margin: 0 3rem;
   }
   #about .End {
@@ -833,7 +839,8 @@ body {
   #about h1 {
     margin: 2rem;
   }
-  #about p, #about a {
+  #about p,
+  #about a {
     margin: 0 3rem;
   }
   #about .End {
