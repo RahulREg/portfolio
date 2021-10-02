@@ -20,16 +20,16 @@ body {
 .navbar {
     position: fixed;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: $textc;
     color: $bgc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     z-index: 100;
 
     span {
         color: $bgc;
-        padding:0.5rem 1rem;
+        padding: 0.5rem 1rem;
         font-size: 1.5rem;
     }
 
@@ -49,6 +49,32 @@ body {
         a {
             margin: 0;
             padding: 0.5rem;
+        }
+    }
+
+    .openMenu {
+        font-size: 2rem;
+        margin: 20px;
+        display: none;
+        cursor: pointer;
+    }
+
+    .mainMenu {
+
+        display: inline-flex;
+        flex-grow: 1;
+        justify-self: center;
+        justify-content: space-around;
+        align-items: center;
+
+        .part {
+            margin-left: 10%;
+            justify-self: center;
+            flex-grow: 2;
+        }
+
+        .closeMenu {
+            display: none;
         }
     }
 
@@ -259,20 +285,20 @@ body {
         width: 100vw;
         overflow-x: hidden;
     }
-    
+
     .navbar {
         position: fixed;
         width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         background-color: $textc;
         color: $bgc;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         z-index: 100;
     
         span {
             color: $bgc;
-            padding:0.5rem 1rem;
+            padding: 0.5rem 1rem;
             font-size: 1.5rem;
         }
     
@@ -292,6 +318,32 @@ body {
             a {
                 margin: 0;
                 padding: 0.5rem;
+            }
+        }
+    
+        .openMenu {
+            font-size: 2rem;
+            margin: 20px;
+            display: none;
+            cursor: pointer;
+        }
+    
+        .mainMenu {
+    
+            display: inline-flex;
+            flex-grow: 1;
+            justify-self: center;
+            justify-content: space-around;
+            align-items: center;
+    
+            .part {
+                margin-left: 10%;
+                justify-self: center;
+                flex-grow: 2;
+            }
+    
+            .closeMenu {
+                display: none;
             }
         }
     
@@ -469,54 +521,57 @@ body {
 }
 
 
-@media (max-width: 500px){
+@media (max-width: 600px){
     body {
         background-color: $bgc;
         color: $textc;
         width: 100vw;
         overflow-x: hidden;
     }
-
-    .container{
-        width: 100vw;
-        overflow-x: hidden;
-    }
     
     .navbar {
-        position: fixed;
-        width: 100%;
-        background-color: $textc;
-        color: $bgc;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 100;
-    
+        justify-content: space-around;
+
         span {
-            color: $bgc;
-            padding:0.5rem 1rem;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
-    
-        a {
-            text-decoration: none;
-            color: $bgc;
-            padding: 0.5rem 0.2rem;
-            margin: 0.5rem;
-    
-            &:hover {
-                border-bottom: 2px solid $bgc;
-                //background-color: rgba(138, 138, 138, 0.5);
+
+        .openMenu {
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        .mainMenu {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 10;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            transition: top 1s ease;
+            display: none;
+
+            .links{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                margin-top: 150px;
+            }
+
+            .closeMenu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
             }
         }
-    
-        .social {
-            a {
-                margin: 0;
-                padding: 0.5rem;
-            }
-        }
-    
     }
     
     #hero {
@@ -579,8 +634,8 @@ body {
         }
     
         .wrapper {
-            width: 400px;
-            height: 225px;
+            width: 300px;
+            height: 169px;
             // border: 1px solid black;
             margin: 1.5rem;
             border-radius: 15px;

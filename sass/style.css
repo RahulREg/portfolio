@@ -17,17 +17,16 @@ body {
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: black;
-  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: black;
+  color: white;
   z-index: 100;
 }
 
@@ -51,6 +50,41 @@ body {
 .navbar .social a {
   margin: 0;
   padding: 0.5rem;
+}
+
+.navbar .openMenu {
+  font-size: 2rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.navbar .mainMenu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  justify-self: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .mainMenu .part {
+  margin-left: 10%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.navbar .mainMenu .closeMenu {
+  display: none;
 }
 
 #hero {
@@ -306,17 +340,16 @@ body {
   .navbar {
     position: fixed;
     width: 100%;
-    background-color: black;
-    color: white;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    background-color: black;
+    color: white;
     z-index: 100;
   }
   .navbar span {
@@ -336,6 +369,37 @@ body {
   .navbar .social a {
     margin: 0;
     padding: 0.5rem;
+  }
+  .navbar .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+  }
+  .navbar .mainMenu {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    justify-self: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar .mainMenu .part {
+    margin-left: 10%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+  .navbar .mainMenu .closeMenu {
+    display: none;
   }
   #hero {
     height: 100vh;
@@ -525,50 +589,71 @@ body {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   body {
     background-color: white;
     color: black;
     width: 100vw;
     overflow-x: hidden;
   }
-  .container {
-    width: 100vw;
-    overflow-x: hidden;
-  }
   .navbar {
-    position: fixed;
-    width: 100%;
-    background-color: black;
-    color: white;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .navbar span {
+    font-size: 2rem;
+  }
+  .navbar .openMenu {
+    display: block;
+    font-size: 1.2rem;
+  }
+  .navbar .mainMenu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    z-index: 100;
+    background: #000;
+    -webkit-transition: top 1s ease;
+    transition: top 1s ease;
+    display: none;
   }
-  .navbar span {
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1.5rem;
+  .navbar .mainMenu .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 2rem;
+    margin-top: 150px;
   }
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    padding: 0.5rem 0.2rem;
-    margin: 0.5rem;
-  }
-  .navbar a:hover {
-    border-bottom: 2px solid white;
-  }
-  .navbar .social a {
-    margin: 0;
-    padding: 0.5rem;
+  .navbar .mainMenu .closeMenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
   #hero {
     height: 100vh;
@@ -651,8 +736,8 @@ body {
         justify-self: center;
   }
   #project .wrapper {
-    width: 400px;
-    height: 225px;
+    width: 300px;
+    height: 169px;
     margin: 1.5rem;
     border-radius: 15px;
     -webkit-transition: 0.4s ease-out;
