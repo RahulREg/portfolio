@@ -143,10 +143,12 @@ body {
 }
 
 #project {
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     align-items: center;
+    overflow-x: scroll;
 
     h1 {
         margin: 2rem;
